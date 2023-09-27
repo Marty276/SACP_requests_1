@@ -1,0 +1,231 @@
+:root{
+    --border_radius_standard: 15px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #eee;
+    font-family: sans-serif;
+}
+
+.app_container{
+    background-color: #fff;
+    width: 100%;
+    max-width: 650px;
+    min-height: 100vh;
+    margin: 0 auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.logo_and_text_cont{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo_and_text_cont img{
+    height: 50px;
+    margin: 30px 0 30px 0;
+}
+
+.logo_and_text_cont h1{
+    font-size: 70px;
+    margin: 0;
+}
+
+.logo_and_text_cont p{
+    font-size: 20px;
+    text-align: center;
+    margin: 10px 15px 25px 15px;
+}
+
+.help_footer{
+    width: 100%;
+    padding: 0 0 30px 0;
+    text-align: center;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.help_footer p{
+    margin: 0 0 5px 0;
+}
+
+.help_footer a{
+    color: #000;
+}
+
+
+.name_input_box{
+    background-color: #D9D9D9;
+    width: 80%;
+    margin: 30px 10% 50px 10%;
+    border-radius: var(--border_radius_standard);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.name_input_box p{
+    font-weight: 400;
+    font-size: 25px;
+    text-align: center;
+    margin: 20px;
+}
+
+.name_input_box input{
+    border: none;
+    border-radius: var(--border_radius_standard);
+    text-align: center;
+    font-size: 25px;
+    width: 80%;
+    height: 55px;
+    font-weight: 600;
+    padding: 0;
+}
+
+.name_input_box input::placeholder{
+    color: #D9D9D9;
+}
+
+.title_cont{
+    width: 100%;
+    padding: 20px 0 20px 0;
+    text-align: center;
+}
+
+.title_cont h1{
+    font-size: 70px;
+    margin: 0;
+}
+
+.continue_button{
+    border: none;
+    border-radius: var(--border_radius_standard);
+    text-align: center;
+    margin: 25px 0 25px 0;
+    font-size: 25px;
+    width: 80%;
+    height: 55px;
+    font-weight: 600;
+    background-color: #5A5757;
+    color: #D9D9D9;
+    padding: 0;
+}
+
+
+.home_footer{
+    border: none;
+    background: none;
+    font-weight: 400;
+    font-size: 20px;
+    text-decoration: underline;
+    color: #000;
+}
+
+.work_data_input_box{
+    background-color: #D9D9D9;
+    width: 80%;
+    margin: 30px 10% 50px 10%;
+    border-radius: var(--border_radius_standard);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.address_label{
+    font-weight: 400;
+    font-size: 25px;
+    text-align: center;
+    margin: 20px 0 10px 0;
+}
+
+.address_input{
+    border: none;
+    border-radius: var(--border_radius_standard);
+    text-align: center;
+    font-size: 25px;
+    max-width: 80%;
+    height: 45px;
+    font-weight: 600;
+}
+
+.address_input::placeholder{
+    color: #D9D9D9;
+}
+
+.work_data_label{
+    font-size: 20px;
+    margin: 30px 20px 30px 20px;
+    text-align: center;
+    color: #5A5757;
+}
+
+.add_new{
+    border-radius: var(--border_radius_standard);
+    text-align: center;
+    margin: 25px 0 0 0;
+    font-size: 25px;
+    width: 80%;
+    height: 30px;
+    font-weight: 600;
+    color: #000;
+    padding: 0;
+    background: none;
+    border: none;
+    text-decoration: underline;
+}
+
+.work_data_mini_form{
+    width: 80%;
+    margin: 0 10% 10px 10%;
+    border-bottom: solid 2px #fff;
+}
+.work_data_mini_form input{
+    border: none;
+    border-radius: var(--border_radius_standard);
+    text-align: center;
+    font-size: 25px;
+    height: 45px;
+    font-weight: 600;
+    padding: 0;
+}
+
+.work_data_mini_form input::placeholder{
+    color: #D9D9D9;
+}
+.work_name_input{
+    width: 100%;
+    margin: 0 0 10px 0;
+}
+
+.work_units_input{
+    width: 48%;
+    float: left;
+}
+
+.work_price_input{
+    width: 48%;
+    float: right;
+}
+
+.optional_label{
+    width: 48%;
+    float: right;
+    font-size: 22px;
+    font-weight: 600;
+    margin: 10px 0 20px 0;
+    color: #5A5757;
+    text-align: center;
+}
