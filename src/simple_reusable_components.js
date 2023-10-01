@@ -1,6 +1,6 @@
 export const Logo_and_text = ({text}) => {
     return <div className="logo_and_text_cont">
-        <img src="img.png"/>
+        <img src="logo.svg"/>
         <h1>SACP</h1>
         <p>{text}</p>
     </div>
