@@ -1,11 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Screen_1, Screen_2, Screen_3, Screen_4 } from './screens';
+import { request_object_model } from "./simple_reusable_components"
 
-let request_object_model = {
-    address : "",
-    work_data : {},
-    worker_name : ""
-}
 
 export const App = () => {
 

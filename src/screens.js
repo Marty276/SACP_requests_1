@@ -30,12 +30,12 @@ export const Screen_2 = ({ request_object, go_to_1, go_to_3 }) => {
     let mfi_list = [0];
     let work_data;
     
-    if (request_object.work_data){
+    if (request_object.work_data.request_details){
 
         mfi_list = new Array;
-        work_data = Object.entries(request_object.work_data);
+        work_data = Object.entries(request_object.work_data.request_details);
 
-        for (let i = 0, l = Object.entries(request_object.work_data).length; i < l;i++){
+        for (let i = 0, l = Object.entries(request_object.work_data.request_details).length; i < l;i++){
             mfi_list.push(i);
         }
 
@@ -69,7 +69,7 @@ export const Screen_2 = ({ request_object, go_to_1, go_to_3 }) => {
 
         if(address && Object.entries(work_data).length != 0){
             request_object.address = address;
-            request_object.work_data = work_data;
+            request_object.work_data.request_details = work_data;
             go_to_3(request_object);
         }
 
@@ -121,7 +121,7 @@ export const Screen_3 = ({ request_object, go_to_2, go_to_4 }) => {
 
                 <h3>{request_object.address}</h3>
 
-                {Object.entries(request_object.work_data).map((work) => {
+                {Object.entries(request_object.work_data.request_details).map((work) => {
                     return <Work_data_mini_list key={work[0]} work_name={work[0]} work_units={work[1][0]} work_price={work[1][1]}/>
                 })}
             
@@ -145,7 +145,7 @@ export const Screen_4 = ({ request_object, go_to_1 }) => {
 
     console.log(request_object);
     useEffect(()=>{
-        fetch("https://sacp-api-v2.onrender.com/api/requests/", {
+        fetch("https://sacp-api-v2.onrender.com/api/works/", {
             method : 'POST',
             headers : {
                 'Content-Type' : 'application/json'
@@ -158,31 +158,45 @@ export const Screen_4 = ({ request_object, go_to_1 }) => {
         .catch(error => {
             console.log(error)
         })
-    })
+    }, [])
 
-    let request_object_model = {
-        address : "",
-        work_data : {},
-        worker_name : ""
+    const request_object_model = {
+        "address" : "",
+        "work_data" : {request_details : {}},
+        "worker_name" : request_object.worker_name,
+        "status" : "requested",
+        "dates" : {request_date : ""},
+        "totals" : {}
     }
 
     return <>
         <Logo_and_text text={
-            response == ""
+            response === ""
             ? "Subiendo registro..."
-            : response == 201
+            : response === 201
             ? "El registro se ha enviado con éxito"
-            : "Ha ocurrido un error"
+            : "Por favor inténtelo de nuevo"
         }/>
 
         <div className="name_input_box">
             {
-                response == ""
-                ? <p>Cargando</p>
-                : <>
-                    <p>¿Qué desea hacer?</p>
-                    <button type='button' id="go_to_1" className='continue_button' onClick={()=>{go_to_1(request_object_model)}}>Volver al inicio</button>
-                    <button type='button' id="whatsapp_button" className='whatsapp_button'>Enviar confirmación <br/>a whatsapp</button>
+                response === ""
+                ? <>
+                    <p>Cargando...</p>
+                    <p>Por favor espere a que el registro termine de enviarse.</p>
+                </>
+                : response === 201 
+                ? <>
+                <p>¿Qué desea hacer?</p>
+                <button type='button' id="go_to_1" className='continue_button' onClick={()=>{go_to_1(request_object_model)}}>Volver al inicio</button>
+                <button type='button' id="whatsapp_button" className='whatsapp_button'>Enviar confirmación <br/>a whatsapp</button>
+                </>
+                :<>
+                    <p>Ha ocurrido un error.</p>
+                    <p>Por favor inténtelo de nuevo.</p>
+                    <p>Si el error persiste, puede contactarse con nosotros vía whatsapp para solucionar el error</p>
+                    <button type='button' id="go_to_1" className='continue_button' onClick={()=>{go_to_1(request_object)}}>Intentar de nuevo</button>
+                    <button type='button' id="whatsapp_button" className='whatsapp_button'>Contactar soporte<br/>por whatsapp</button>
                 </>
             }
         </div>
