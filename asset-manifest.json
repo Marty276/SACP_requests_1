@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/SACP_requests_1/static/css/main.12fd3689.css",
+    "main.js": "/SACP_requests_1/static/js/main.3048d1b0.js",
+    "index.html": "/SACP_requests_1/index.html",
+    "main.12fd3689.css.map": "/SACP_requests_1/static/css/main.12fd3689.css.map",
+    "main.3048d1b0.js.map": "/SACP_requests_1/static/js/main.3048d1b0.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.12fd3689.css",
+    "static/js/main.3048d1b0.js"
+  ]
+}
